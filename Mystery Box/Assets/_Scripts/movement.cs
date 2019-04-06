@@ -25,11 +25,14 @@ public class movement : MonoBehaviour {
     // Rigidbody to stop movement on death.
     Rigidbody rb;
 
+    // LineRenderer for aiming with
+    LineRenderer AimingLine;
     void Start () 
 	{
         rotation = Vector3.zero;
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn").transform;
         rb = GetComponentInParent<Rigidbody>();
+        AimingLine = GetComponentInChildren<LineRenderer>();
     }
 	
 	
@@ -37,8 +40,10 @@ public class movement : MonoBehaviour {
 	{
 		transform.position = new Vector3(0, transform.position.y, transform.position.z);
 
+        AimingLine.enabled = !Moving;
+
         // X Rotation Block
-		if(Input.GetAxisRaw("Vertical") != 0)
+		if(Input.GetAxisRaw("Vertical") != 0 && !Moving)
         {
             rotation.x += (Input.GetAxis("Vertical") * rotationEuler);
             Debug.Log(rotation);

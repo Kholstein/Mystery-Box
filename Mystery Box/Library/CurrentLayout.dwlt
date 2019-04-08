@@ -88,10 +88,10 @@ MonoBehaviour:
     y: 30
     width: 1858
     height: 987
-  m_MinSize: {x: 911, y: 442}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 913, y: 442}
+  m_MaxSize: {x: 22008, y: 10021}
   vertical: 0
-  controlID: 134
+  controlID: 95
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,8 +205,8 @@ MonoBehaviour:
     y: 0
     width: 416
     height: 987
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -314,9 +314,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 960c0000
-    m_LastClickedID: 3222
-    m_ExpandedIDs: e6fbffff00000000960c0000da0c0000
+    m_SelectedIDs: ba0c0000
+    m_LastClickedID: 3258
+    m_ExpandedIDs: e6fbffff00000000980c0000dc0c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -411,19 +411,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Materials
+    - Assets/_Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Materials
+  - Assets/_Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\Mystery-Box\Mystery Box
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64090000
-    m_LastClickedID: 2404
+    m_SelectedIDs: 000a0000
+    m_LastClickedID: 2560
     m_ExpandedIDs: 000000005609000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -612,14 +612,14 @@ MonoBehaviour:
     height: 485
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 93.66830689999999
+  lastFramingTime: 1175.3356618999999
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.3694601, y: 0.21129724, z: 0.7072526}
+    m_Target: {x: -0.13845897, y: 0.33953792, z: 1.1738508}
     speed: 2
-    m_Value: {x: 0.3694601, y: 0.21129724, z: 0.7072526}
+    m_Value: {x: -0.13845897, y: 0.33953792, z: 1.1738508}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -647,13 +647,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.086135395, y: 0.6466138, z: 0.07384106, w: -0.75443023}
+    m_Target: {x: 0.06792901, y: 0.76333654, z: 0.0813719, w: -0.6373599}
     speed: 2
-    m_Value: {x: 0.0861291, y: 0.6465665, z: 0.07383566, w: -0.7543751}
+    m_Value: {x: 0.06792405, y: 0.76328087, z: 0.081365965, w: -0.6373134}
   m_Size:
-    m_Target: 2.6019866
+    m_Target: 8.574521
     speed: 2
-    m_Value: 2.6019866
+    m_Value: 8.574521
   m_Ortho:
     m_Target: 0
     speed: 2

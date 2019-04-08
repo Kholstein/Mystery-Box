@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour {
    // X Rotation Block Variables
@@ -27,6 +28,10 @@ public class movement : MonoBehaviour {
 
     // LineRenderer for aiming with
     LineRenderer AimingLine;
+
+    public AimCheck AC;
+
+    bool OnUpDown, OnDownDown;
     void Start () 
 	{
         rotation = Vector3.zero;
@@ -34,6 +39,38 @@ public class movement : MonoBehaviour {
         rb = GetComponentInParent<Rigidbody>();
         AimingLine = GetComponentInChildren<LineRenderer>();
     }
+
+    //MOBILE INPUT DO NOT TOUCH
+
+    public void OnUpRotDown()
+    {
+        OnUpDown = true;
+    }
+
+    public void OnUpRotUp()
+    {
+        OnUpDown = false;
+    }
+
+    public void OnDownRotDown()
+    {
+        OnDownDown = true;
+    }
+
+    public void OnDownRotUp()
+    {
+        OnDownDown = false;
+    }
+
+    public void Fire()
+    {
+        if (AC.Blocking == false)
+        {
+			Moving = true;
+		}
+    }
+    //MOBILE INPUT DO NOT TOUCH
+
 	
 	
 	void Update () 
@@ -46,7 +83,7 @@ public class movement : MonoBehaviour {
 		if(Input.GetAxisRaw("Vertical") != 0 && !Moving)
         {
             rotation.x += (Input.GetAxis("Vertical") * rotationEuler);
-            Debug.Log(rotation);
+            //Debug.Log(rotation);
             FinalQuaternion = Quaternion.Euler(rotation);
             transform.rotation = FinalQuaternion;
             // rotation applied
@@ -57,7 +94,36 @@ public class movement : MonoBehaviour {
             transform.rotation = FinalQuaternion;
         }
 
-		if (Input.GetKeyDown(KeyCode.Space))
+        //MOBILE INPUT DO NOT TOUCH
+        if(OnUpDown == true)
+        {
+            rotation.x += (-1 * rotationEuler);
+            //Debug.Log(rotation);
+            FinalQuaternion = Quaternion.Euler(rotation);
+            transform.rotation = FinalQuaternion;
+            // rotation applied
+        }
+        if(OnUpDown == false)
+        {
+            FinalQuaternion = Quaternion.Euler(rotation);
+            transform.rotation = FinalQuaternion;
+        }
+        if(OnDownDown == true)
+        {
+            rotation.x += (1 * rotationEuler);
+            //Debug.Log(rotation);
+            FinalQuaternion = Quaternion.Euler(rotation);
+            transform.rotation = FinalQuaternion;
+            // rotation applied
+        }
+        if(OnDownDown == false)
+        {
+            FinalQuaternion = Quaternion.Euler(rotation);
+            transform.rotation = FinalQuaternion;
+        }
+        //MOBILE INPUT DO NOT TOUCH
+
+		if (Input.GetKeyDown(KeyCode.Space) & AC.Blocking == false)
         {
 			Moving = true;
 		}
@@ -65,16 +131,17 @@ public class movement : MonoBehaviour {
         //Hookshot Movement block
         if (Moving)
         {
-            transform.position += transform.forward;
+            transform.position += transform.forward/2.5f;
         }
 
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject != lasthit)
+        Moving = false;
+        if (other.gameObject == lasthit)
 		{
-			Moving = false;
+			
         }
 		lasthit = other.gameObject;
     }

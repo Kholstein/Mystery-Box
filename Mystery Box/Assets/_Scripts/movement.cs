@@ -14,6 +14,8 @@ public class movement : MonoBehaviour {
     public bool Moving;
     private Vector3 target;
 
+    public Text winText;
+
     // X Rotation calculation Variables
     Vector3 rotation;
     Quaternion FinalQuaternion;
@@ -153,12 +155,23 @@ public class movement : MonoBehaviour {
             rb.velocity = Vector3.zero;
             Respawn();
         }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Win();
+        }
     }
 
     void Respawn()
     {
         transform.position = respawnPosition.position;
         Moving = false;
+        winText.gameObject.SetActive(false);
+    }
+
+    void Win()
+    {
+        winText.gameObject.SetActive(true);
     }
 }
 

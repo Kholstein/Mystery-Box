@@ -32,7 +32,7 @@ public class movement : MonoBehaviour {
     LineRenderer AimingLine;
 
     public AimCheck AC;
-
+    private DeathWallMovement wall; //reset wall
     bool OnUpDown, OnDownDown;
     void Start () 
 	{
@@ -40,6 +40,7 @@ public class movement : MonoBehaviour {
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn").transform;
         rb = GetComponentInParent<Rigidbody>();
         AimingLine = GetComponentInChildren<LineRenderer>();
+        wall = FindObjectOfType<DeathWallMovement>();
     }
 
     //MOBILE INPUT DO NOT TOUCH
@@ -137,6 +138,12 @@ public class movement : MonoBehaviour {
         }
 
     }
+    private void OnParticleCollision(GameObject other)
+    {
+
+        Respawn();
+        Debug.Log("Particle collisions");
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -164,6 +171,7 @@ public class movement : MonoBehaviour {
 
     void Respawn()
     {
+        wall.Respawn();
         transform.position = respawnPosition.position;
         Moving = false;
         winText.gameObject.SetActive(false);

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Death_Plane
   - Wall
+  - DeathWall
+  - Wall2
   layers:
   - Default
   - TransparentFX

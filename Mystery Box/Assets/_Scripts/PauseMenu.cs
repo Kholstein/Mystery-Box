@@ -12,8 +12,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject creditMenuUI;
 
-    public GameObject GameMenu;
-
     void Start()
     {
         GameIsPaused = false;
@@ -36,12 +34,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Credits()
     {
+        pauseMenuUI.SetActive(false);
         creditMenuUI.SetActive(true);
     }
 
     public void Back()
     {
         creditMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
     }
 
     public void StartMenu()
@@ -58,7 +58,6 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        GameMenu.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

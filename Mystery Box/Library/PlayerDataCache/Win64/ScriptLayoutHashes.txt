@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/khols/Desktop/Classes/CSCC classes/3D Game Project/Mystery Box/Mystery Box/PC Builds/Mystery Box.exe
+C:/Users/khols/Desktop/Classes/CSCC classes/3D Game Project/Mystery Box/Mystery Box/Project/Mystery Box.exe
 SceneListBegin?
 Assets/_Scenes/StartMenu.unity
 Assets/_Scenes/LevelOne.unity
@@ -115,7 +115,6 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 5b9b2f59726c6ff8c5be027e767006cf Assembly-CSharp.dll:.Camera
-eaa3cedbd44f0dce84aded4594485868 Assembly-CSharp.dll:.AimCheck
 382b8ef512fa8d6108723a01b57af65b UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 d22c788799ee45d8676254eccf20e8b8 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -123,7 +122,6 @@ d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-bef3d541287bbb44fbe126cd7443cc17 Assembly-CSharp.dll:.MainMenu
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -163,14 +161,10 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-6592e00c7831312304ddfd950cbe956f Assembly-CSharp.dll:.PauseMenu
-bba0a841b54765ea48518aa5253b9909 Assembly-CSharp.dll:.movement
-f896a4c1e4ad712594f529af4d0566a4 Assembly-CSharp.dll:.ScrollingMat
+1d3064cc1fe5ef1fd199f828a050da3d Assembly-CSharp.dll:.movement
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-cdd067d36ee75e66fc43adcea53c7983 Assembly-CSharp.dll:.DeathWall
-d4c889a3daff18f6925665db39a5b330 Assembly-CSharp.dll:.Bullet
-0b6a2e94d297d2a61776d7978bdcce97 Assembly-CSharp.dll:.Enemy
-8fb5e8ce855184ee0e5143ad04cc8e67 Assembly-CSharp.dll:.Camera_Zoom
+bef3d541287bbb44fbe126cd7443cc17 Assembly-CSharp.dll:.MainMenu
+6592e00c7831312304ddfd950cbe956f Assembly-CSharp.dll:.PauseMenu

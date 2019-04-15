@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (other.gameObject.name == "Player")
         {
             Destroy(gameObject);
         }

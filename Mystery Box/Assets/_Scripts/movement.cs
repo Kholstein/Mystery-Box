@@ -34,6 +34,10 @@ public class movement : MonoBehaviour {
     public AimCheck AC;
     private DeathWallMovement wall; //reset wall
     bool OnUpDown, OnDownDown;
+    Quaternion lastrot;
+
+    bool BounceOffWall;
+
     void Start () 
 	{
         rotation = Vector3.zero;
@@ -41,6 +45,7 @@ public class movement : MonoBehaviour {
         rb = GetComponentInParent<Rigidbody>();
         AimingLine = GetComponentInChildren<LineRenderer>();
         wall = FindObjectOfType<DeathWallMovement>();
+        lastrot = gameObject.transform.rotation;
     }
 
     //MOBILE INPUT DO NOT TOUCH
@@ -81,6 +86,11 @@ public class movement : MonoBehaviour {
 		transform.position = new Vector3(0, transform.position.y, transform.position.z);
 
         AimingLine.enabled = !Moving;
+
+        if(BounceOffWall)
+        {
+            Moving = true;
+        }
 
         // X Rotation Block
 		if(Input.GetAxisRaw("Vertical") != 0 && !Moving)
@@ -132,7 +142,7 @@ public class movement : MonoBehaviour {
 		}
 
         //Hookshot Movement block
-        if (Moving)
+        if (Moving & BounceOffWall == false)
         {
             transform.position += transform.forward/2.5f;
         }
@@ -140,7 +150,6 @@ public class movement : MonoBehaviour {
     }
     private void OnParticleCollision(GameObject other)
     {
-
         Respawn();
         Debug.Log("Particle collisions");
     }
@@ -148,9 +157,14 @@ public class movement : MonoBehaviour {
     void OnCollisionEnter(Collision other)
     {
         Moving = false;
-        if (other.gameObject == lasthit)
+        if (other.gameObject.tag == "Wall2")
 		{
-			
+            BounceOffWall = true;
+            Moving = true;
+        }
+        else
+        {
+            BounceOffWall = false;
         }
 		lasthit = other.gameObject;
     }

@@ -32,14 +32,21 @@ public class notSticky : MonoBehaviour {
             //the function I made
             //Drop();
             //I dont know if line 35 does anything but I just left it as it just cause
+
             rb.useGravity = true;
+            rb.isKinematic = false;
             
             //line 38 was fun to mess around with, the player would spin out of control along with the aiming indicator
             //rb.isKinematic = false;
 
             //line 42 is was causes the transform of the player to move down on the Y axis by -10
             //then I multiplied it by the speed (important) and time
-            transform.Translate(new Vector3(0, -10, 0) * Time.deltaTime * speed);
+            //transform.Translate(new Vector3(0, -10, 0) * Time.deltaTime * speed);
+        }
+        else
+        {
+            rb.useGravity = false;
+            rb.isKinematic = true;
         }
     }
 

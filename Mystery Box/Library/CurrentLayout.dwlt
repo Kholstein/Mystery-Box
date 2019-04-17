@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 107
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 377
     height: 931
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 366
     height: 563
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 108
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 109
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,20 +323,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scripts
+    - Assets/_Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scripts
+  - Assets/_Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\khols\Documents\GitHub\Mystery-Box\Mystery Box
+  m_LastProjectPath: D:\Unity\Mystery-Box\Mystery Box
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b22a0000
-    m_LastClickedID: 10930
-    m_ExpandedIDs: 00000000f829000000ca9a3b
+    m_SelectedIDs: da2c0000
+    m_LastClickedID: 11482
+    m_ExpandedIDs: 00000000042c0000162c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f8290000
+    m_ExpandedIDs: 00000000042c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e6fbffff00000000
+    m_SelectedIDs: 3c300000
+    m_LastClickedID: 12348
+    m_ExpandedIDs: 9cf8ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,14 +532,14 @@ MonoBehaviour:
     height: 542
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1042.3817282
+  lastFramingTime: 81.3836742
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 555.5, y: 262.5, z: 0}
+    m_Target: {x: 1.8736534, y: 16.13264, z: 19.320173}
     speed: 2
-    m_Value: {x: 555.5, y: 262.5, z: 0}
+    m_Value: {x: 1.8736534, y: 16.13264, z: 19.320173}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,13 +567,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.09011073, y: 0.040917918, z: -0.0037053945, w: -0.99508435}
+    m_Target: {x: -0.056974508, y: 0.74429053, z: -0.06402451, w: -0.662334}
     speed: 2
-    m_Value: {x: -0.09011073, y: 0.04091792, z: -0.0037053945, w: -0.9950844}
+    m_Value: {x: -0.05697451, y: 0.7442906, z: -0.064024515, w: -0.6623341}
   m_Size:
-    m_Target: 732.40485
+    m_Target: 34.205196
     speed: 2
-    m_Value: 732.40485
+    m_Value: 34.205196
   m_Ortho:
     m_Target: 0
     speed: 2

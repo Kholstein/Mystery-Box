@@ -27,7 +27,7 @@ public class notSticky : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.collider.tag);
-        if (collision.collider.tag == "Wall2")
+        if (collision.collider.tag == "Wall2" || collision.collider.tag == "Projectile")
         {
             //the function I made
             //Drop();

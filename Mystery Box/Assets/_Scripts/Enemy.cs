@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public float speed;
+    public GameObject shot;
     //private Rigidbody rb;
     public Transform player;
     public float stoppingDistance;
@@ -12,6 +13,8 @@ public class Enemy : MonoBehaviour {
     private float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject projectile;
+    public float bulletTime;
+    public float destroySpeed;
     GameObject target;
 
     void Start()
@@ -32,11 +35,13 @@ public class Enemy : MonoBehaviour {
     {
         Vector3 targetPosition = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
         transform.LookAt(targetPosition);
+        float dist = Vector3.Distance(targetPosition, transform.position);
 
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && dist <= 20)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            shot = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
+            Destroy(shot, destroySpeed);
         }
         else
         {

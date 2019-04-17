@@ -178,7 +178,7 @@ public class movement : MonoBehaviour {
         {
             BounceOffWall = false;
         }
-		lasthit = other.gameObject;
+        lasthit = other.gameObject;
     }
 
     private void OnTriggerEnter(Collider other)

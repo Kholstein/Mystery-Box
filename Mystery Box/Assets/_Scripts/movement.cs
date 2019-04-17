@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour {
    // X Rotation Block Variables
@@ -15,6 +16,9 @@ public class movement : MonoBehaviour {
     private Vector3 target;
 
     public Text winText;
+    public float winTimer;
+    float delayTime = 5f;
+    bool didWin = false;
 
     // X Rotation calculation Variables
     Vector3 rotation;
@@ -147,6 +151,14 @@ public class movement : MonoBehaviour {
             transform.position += transform.forward/2.5f;
         }
 
+        if (didWin == true)
+        {
+            winTimer += Time.deltaTime;
+            if (winTimer >= delayTime)
+            {
+                StartCoroutine("WinRestart");
+            }
+        }
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -194,6 +206,14 @@ public class movement : MonoBehaviour {
     void Win()
     {
         winText.gameObject.SetActive(true);
+        didWin = true;
+    }
+
+    IEnumerator WinRestart()
+    {
+        winText.gameObject.SetActive(false);
+        SceneManager.LoadScene("LevelOne");
+        yield return null;
     }
 }
 

@@ -16,9 +16,6 @@ public class movement : MonoBehaviour {
     private Vector3 target;
 
     public Text winText;
-    public float winTimer;
-    float delayTime = 5f;
-    bool didWin = false;
 
     // X Rotation calculation Variables
     Vector3 rotation;
@@ -42,8 +39,23 @@ public class movement : MonoBehaviour {
 
     bool BounceOffWall;
 
+    public AudioSource StickAS;
+
+    public AudioSource DieAS;
+
+    public AudioSource WallAS;
+
+    public GameObject UpUI;
+
+    public GameObject DownUI;
+
+    public float winTimer;
+    float delayTime = 5f;
+    bool didWin = false;
+
     void Start () 
 	{
+        DieAS.Play();
         rotation = Vector3.zero;
         respawnPosition = GameObject.FindGameObjectWithTag("Respawn").transform;
         rb = GetComponentInParent<Rigidbody>();
@@ -97,7 +109,7 @@ public class movement : MonoBehaviour {
         }
 
         // X Rotation Block
-		if(Input.GetAxisRaw("Vertical") != 0 && !Moving)
+		if(!Moving)
         {
             rotation.x += (Input.GetAxis("Vertical") * rotationEuler);
             //Debug.Log(rotation);
@@ -109,6 +121,8 @@ public class movement : MonoBehaviour {
         {
             FinalQuaternion = Quaternion.Euler(rotation);
             transform.rotation = FinalQuaternion;
+            UpUI.SetActive(false);
+            DownUI.SetActive(false);
         }
 
         //MOBILE INPUT DO NOT TOUCH
@@ -159,6 +173,7 @@ public class movement : MonoBehaviour {
                 StartCoroutine("WinRestart");
             }
         }
+
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -169,16 +184,20 @@ public class movement : MonoBehaviour {
     void OnCollisionEnter(Collision other)
     {
         Moving = false;
+        UpUI.SetActive(true);
+        DownUI.SetActive(true);
         if (other.gameObject.tag == "Wall2")
 		{
             BounceOffWall = true;
             Moving = true;
+            StickAS.Play();
         }
         else
         {
             BounceOffWall = false;
+            WallAS.Play();
         }
-        lasthit = other.gameObject;
+		lasthit = other.gameObject;
     }
 
     private void OnTriggerEnter(Collider other)

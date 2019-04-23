@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour {
     public Transform player;
     Vector3 moveDirection;
     private Vector3 target;
+    //ParticleSystem turret;
 
     private void Start()
     { //might need to change the axis for this piece of code since the camera will be in a 2D view
@@ -17,6 +18,7 @@ public class Bullet : MonoBehaviour {
         target = new Vector3(player.position.x, player.position.y);
         moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y);
+        //turret = GetComponent<ParticleSystem>();
         //target = GameObject.Find("Player");
     }
 
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour {
     {
         if (other.gameObject.name.Equals("Player") || other.gameObject.tag == "Wall")
         {
+            //Instantiate(turret);
             Destroy(gameObject);
         }
     }

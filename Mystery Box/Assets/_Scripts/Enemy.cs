@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour {
     public float bulletTime;
     public float destroySpeed;
     GameObject target;
+    ParticleSystem turret;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         target = GameObject.Find("Player");
+        turret = GetComponent<ParticleSystem>();
     }
 
     //void FixedUpdate()
@@ -40,6 +42,7 @@ public class Enemy : MonoBehaviour {
         if (timeBtwShots <= 0 && dist <= 20)
         {
             shot = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
+            //Instantiate(turret, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
             Destroy(shot, destroySpeed);
         }

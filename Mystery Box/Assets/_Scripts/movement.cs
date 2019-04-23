@@ -16,6 +16,8 @@ public class movement : MonoBehaviour {
     private Vector3 target;
 
     public Text winText;
+    public Text loseText;
+    public Text shotText;
 
     // X Rotation calculation Variables
     Vector3 rotation;
@@ -53,6 +55,9 @@ public class movement : MonoBehaviour {
     float delayTime = 5f;
     bool didWin = false;
 
+    public float jumpCounter;
+    public float jumpLimit;
+
     void Start () 
 	{
         DieAS.Play();
@@ -62,6 +67,7 @@ public class movement : MonoBehaviour {
         AimingLine = GetComponentInChildren<LineRenderer>();
         wall = FindObjectOfType<DeathWallMovement>();
         lastrot = gameObject.transform.rotation;
+        jumpCounter = 0;
     }
 
     //MOBILE INPUT DO NOT TOUCH
@@ -91,6 +97,7 @@ public class movement : MonoBehaviour {
         if (AC.Blocking == false)
         {
 			Moving = true;
+            ++jumpCounter;
 		}
     }
     //MOBILE INPUT DO NOT TOUCH
@@ -154,10 +161,16 @@ public class movement : MonoBehaviour {
         }
         //MOBILE INPUT DO NOT TOUCH
 
-		if (Input.GetKeyDown(KeyCode.Space) & AC.Blocking == false)
+        if (Input.GetKeyDown(KeyCode.Space) && Moving == false && transform.hasChanged)
         {
-			Moving = true;
-		}
+            ++jumpCounter;
+            transform.hasChanged = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) & AC.Blocking == false)
+        {
+            Moving = true;
+        }
 
         //Hookshot Movement block
         if (Moving & BounceOffWall == false)
@@ -174,6 +187,16 @@ public class movement : MonoBehaviour {
             }
         }
 
+        if (jumpCounter > jumpLimit)
+        {
+            loseText.gameObject.SetActive(true);
+            winTimer += Time.deltaTime;
+            if (winTimer >= delayTime)
+            {
+                StartCoroutine("LoseRestart");
+            }
+        }
+        shotText.text = "Shots: " + jumpCounter + "/" + jumpLimit;
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -231,6 +254,13 @@ public class movement : MonoBehaviour {
     IEnumerator WinRestart()
     {
         winText.gameObject.SetActive(false);
+        SceneManager.LoadScene("LevelOne");
+        yield return null;
+    }
+
+    IEnumerator LoseRestart()
+    {
+        loseText.gameObject.SetActive(false);
         SceneManager.LoadScene("LevelOne");
         yield return null;
     }

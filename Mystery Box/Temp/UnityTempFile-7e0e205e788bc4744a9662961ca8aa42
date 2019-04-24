@@ -187,7 +187,6 @@ Assets/_Scripts/AimCheck.cs
 Assets/_Scripts/BroomMovement.cs
 Assets/_Scripts/Bullet.cs
 Assets/_Scripts/Camera.cs
-Assets/_Scripts/DeathWall.cs
 Assets/_Scripts/DeathWallMovement.cs
 Assets/_Scripts/Enemy.cs
 Assets/_Scripts/MainMenu.cs

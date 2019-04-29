@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - DeathWall
   - Wall2
+  - Projectile
+  - Dirty
   layers:
   - Default
   - TransparentFX

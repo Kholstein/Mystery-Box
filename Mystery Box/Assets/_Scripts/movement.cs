@@ -57,6 +57,7 @@ public class movement : MonoBehaviour {
 
     public float jumpCounter;
     public float jumpLimit;
+    private ParticleSystem PS;
 
     void Start () 
 	{
@@ -68,6 +69,9 @@ public class movement : MonoBehaviour {
         wall = FindObjectOfType<DeathWallMovement>();
         lastrot = gameObject.transform.rotation;
         jumpCounter = 0;
+        PS = GetComponentInChildren<ParticleSystem>();
+        PS.enableEmission = false;
+ 
     }
 
     //MOBILE INPUT DO NOT TOUCH
@@ -106,7 +110,8 @@ public class movement : MonoBehaviour {
 	
 	void Update () 
 	{
-		transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        PS.enableEmission = false;
+        transform.position = new Vector3(0, transform.position.y, transform.position.z);
 
         AimingLine.enabled = !Moving;
 
@@ -206,6 +211,7 @@ public class movement : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
+
         Moving = false;
         UpUI.SetActive(true);
         DownUI.SetActive(true);
@@ -221,6 +227,9 @@ public class movement : MonoBehaviour {
             WallAS.Play();
         }
 		lasthit = other.gameObject;
+        Debug.Log("called");
+        PS.enableEmission = true;
+       
     }
 
     private void OnTriggerEnter(Collider other)

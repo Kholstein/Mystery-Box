@@ -58,6 +58,8 @@ public class movement : MonoBehaviour {
     public float jumpCounter;
     public float jumpLimit;
     public ParticleSystem PS;
+    public Color landColor;
+    public Color deathColor;
 
     void Start () 
 	{
@@ -207,6 +209,10 @@ public class movement : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
+        if(Moving)
+        {
+            PS.Play();
+        };
 
         Moving = false;
         UpUI.SetActive(true);
@@ -226,13 +232,16 @@ public class movement : MonoBehaviour {
 		lasthit = other.gameObject;
         Debug.Log("called");
 
-       PS.Play();
+      
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Death_Plane")) //Large death trigger
         {
+            ParticleSystem.MainModule mainModule = PS.main;
+            mainModule.startColor = landColor;
+            PS.Play();
             rb.velocity = Vector3.zero;
             Respawn();
         }
@@ -245,7 +254,11 @@ public class movement : MonoBehaviour {
 
     void Respawn()
     {
+        ParticleSystem.MainModule mainModule = PS.main;
+        mainModule.startColor = deathColor;
+        PS.Play();
         wall.Respawn();
+        SceneManager.LoadScene("LevelOne");
         transform.position = respawnPosition.position;
         Moving = false;
         winText.gameObject.SetActive(false);

@@ -18,7 +18,7 @@ public class DeathWallMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) //Large death trigger
         {
-            SceneManager.LoadScene("LevelOne");
+            //SceneManager.LoadScene("LevelOne");
             Respawn();
         }
     }

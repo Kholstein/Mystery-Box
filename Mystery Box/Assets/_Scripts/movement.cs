@@ -232,6 +232,10 @@ public class movement : MonoBehaviour {
 		lasthit = other.gameObject;
         Debug.Log("called");
 
+        if (other.gameObject.tag == "Floor" || other.gameObject.tag == "Ceiling")
+        {
+            jumpCounter = jumpCounter + 3;
+        }
       
     }
 

@@ -213,7 +213,8 @@ public class movement : MonoBehaviour {
         {
             PS.Play();
         };
-
+        ParticleSystem.MainModule mainModule = PS.main;
+        mainModule.startColor = landColor;
         Moving = false;
         UpUI.SetActive(true);
         DownUI.SetActive(true);
@@ -247,7 +248,7 @@ public class movement : MonoBehaviour {
             mainModule.startColor = landColor;
             PS.Play();
             rb.velocity = Vector3.zero;
-            Respawn();
+            Invoke("Respawn", 1f);
         }
 
         if (other.gameObject.CompareTag("Finish"))
@@ -258,9 +259,7 @@ public class movement : MonoBehaviour {
 
     void Respawn()
     {
-        ParticleSystem.MainModule mainModule = PS.main;
-        mainModule.startColor = deathColor;
-        PS.Play();
+       
         wall.Respawn();
         SceneManager.LoadScene("LevelOne");
         transform.position = respawnPosition.position;

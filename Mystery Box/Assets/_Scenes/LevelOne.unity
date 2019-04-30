@@ -11395,17 +11395,17 @@ Prefab:
     - target: {fileID: 114964384695812608, guid: f5ca0c7a2132e0e4fb271b304b8dcd8e,
         type: 2}
       propertyPath: landColor.r
-      value: 0.5
+      value: 0.6226415
       objectReference: {fileID: 0}
     - target: {fileID: 114964384695812608, guid: f5ca0c7a2132e0e4fb271b304b8dcd8e,
         type: 2}
       propertyPath: landColor.g
-      value: 0.06839624
+      value: 0.26726595
       objectReference: {fileID: 0}
     - target: {fileID: 114964384695812608, guid: f5ca0c7a2132e0e4fb271b304b8dcd8e,
         type: 2}
       propertyPath: landColor.b
-      value: 0.25651696
+      value: 0.42094195
       objectReference: {fileID: 0}
     - target: {fileID: 114964384695812608, guid: f5ca0c7a2132e0e4fb271b304b8dcd8e,
         type: 2}

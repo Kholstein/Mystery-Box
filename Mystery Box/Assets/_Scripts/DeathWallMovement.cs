@@ -26,6 +26,5 @@ public class DeathWallMovement : MonoBehaviour
     public void Respawn()
     {
         transform.position = respawnPosition.position;
-
     }
 }

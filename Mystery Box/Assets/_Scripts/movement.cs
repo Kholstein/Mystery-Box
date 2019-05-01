@@ -61,6 +61,8 @@ public class movement : MonoBehaviour {
     public Color landColor;
     public Color deathColor;
 
+    public string nextlevel;
+
     void Start () 
 	{
         DieAS.Play();
@@ -212,9 +214,9 @@ public class movement : MonoBehaviour {
         if(Moving)
         {
             PS.Play();
-        };
-        ParticleSystem.MainModule mainModule = PS.main;
-        mainModule.startColor = landColor;
+        }
+       // ParticleSystem.MainModule mainModule = PS.main;
+       // mainModule.startColor = landColor;
         Moving = false;
         UpUI.SetActive(true);
         DownUI.SetActive(true);
@@ -259,9 +261,9 @@ public class movement : MonoBehaviour {
 
     void Respawn()
     {
-       
         wall.Respawn();
-        SceneManager.LoadScene("LevelOne");
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
         transform.position = respawnPosition.position;
         Moving = false;
         winText.gameObject.SetActive(false);
@@ -276,14 +278,15 @@ public class movement : MonoBehaviour {
     IEnumerator WinRestart()
     {
         winText.gameObject.SetActive(false);
-        SceneManager.LoadScene("LevelOne");
+        SceneManager.LoadScene(nextlevel);
         yield return null;
     }
 
     IEnumerator LoseRestart()
     {
         loseText.gameObject.SetActive(false);
-        SceneManager.LoadScene("LevelOne");
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
         yield return null;
     }
 }

@@ -1,8 +1,10 @@
 WindowsStandalone
 PlayerPath?
-D:/Users/Jamie/Desktop/Week 3 build Gum Gum go/Mystery Box.exe
+C:/Users/khols/Documents/GitHub/Mystery-Box/Mystery Box/Project/GumGumGo.exe
 SceneListBegin?
+Assets/_Scenes/StartMenu.unity
 Assets/_Scenes/LevelOne.unity
+Assets/_Scenes/Level2.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -86,6 +88,7 @@ a44114bd4fa541174f78b4bb92bacb48 UnityEngine.UI.dll:UnityEngine.EventSystems.Sta
 e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+98f0dfd2378729c082be8d0dd8ea0d71 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingBehaviour
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 754551afe4f2531f58476bf14c510657 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -125,7 +128,9 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 bef3d541287bbb44fbe126cd7443cc17 Assembly-CSharp.dll:.MainMenu
 96f3ea9f23b6f08e60710ebb4af49174 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+85abb8d34aa02aa4b24219930276520f Assembly-CSharp.dll:.SoundManager
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+e2bc6ef764fff21ff1e9db5ef924d331 Assembly-CSharp.dll:.ExampleWheelController
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -162,11 +167,12 @@ e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSyste
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
+713f094d38dde97adcca89d1fad847c0 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingProfile
 cdd067d36ee75e66fc43adcea53c7983 Assembly-CSharp.dll:.DeathWallMovement
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 6592e00c7831312304ddfd950cbe956f Assembly-CSharp.dll:.PauseMenu
 a58001b018ba523e3d88869b739e6517 Assembly-CSharp.dll:.BroomMovement
-1f082db2765c9b1cfc5e1277b97fdd71 Assembly-CSharp.dll:.movement
+d7dc90975b789eb321ae22190cb7c014 Assembly-CSharp.dll:.movement
 f896a4c1e4ad712594f529af4d0566a4 Assembly-CSharp.dll:.ScrollingMat
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 d4c889a3daff18f6925665db39a5b330 Assembly-CSharp.dll:.Bullet
@@ -174,3 +180,5 @@ d4c889a3daff18f6925665db39a5b330 Assembly-CSharp.dll:.Bullet
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 34b681cd09306df5cc3b57c4000ff332 Assembly-CSharp.dll:.Enemy
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
+5395a32239542ca38cef390987301ee2 Assembly-CSharp.dll:.FPSCounter
+379cafa69a2fa07c23fef956e0cf2a4e Assembly-CSharp.dll:.Camera_Zoom
